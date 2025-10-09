@@ -22,6 +22,13 @@ public class CalculatorHandler
         };
     }
 
+    public double MultiplyThenAdd(double left, double right)
+    {
+        var product = PerformOperation(left, right, CalculatorOperation.Multiplication);
+        var sum = PerformOperation(left, right, CalculatorOperation.Addition);
+        return product + sum;
+    }
+
     private static double HandleDivision(double left, double right)
     {
         if (right == 0)

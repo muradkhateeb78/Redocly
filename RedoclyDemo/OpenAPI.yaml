@@ -127,6 +127,37 @@ paths:
               schema:
                 type: number
                 format: double
+  /Calculator/multipleAdd:
+    get:
+      tags:
+        - Calculator
+      parameters:
+        - name: left
+          in: query
+          schema:
+            type: number
+            format: double
+        - name: right
+          in: query
+          schema:
+            type: number
+            format: double
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: number
+                format: double
+            application/json:
+              schema:
+                type: number
+                format: double
+            text/json:
+              schema:
+                type: number
+                format: double
   /WeatherForecast:
     get:
       tags:
