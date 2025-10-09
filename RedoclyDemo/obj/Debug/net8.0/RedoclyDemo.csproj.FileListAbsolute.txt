@@ -27,7 +27,6 @@ C:\Users\khatemur\source\repos\RedoclyDemo\RedoclyDemo\obj\Debug\net8.0\staticwe
 C:\Users\khatemur\source\repos\RedoclyDemo\RedoclyDemo\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\khatemur\source\repos\RedoclyDemo\RedoclyDemo\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\khatemur\source\repos\RedoclyDemo\RedoclyDemo\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\khatemur\source\repos\RedoclyDemo\RedoclyDemo\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\khatemur\source\repos\RedoclyDemo\RedoclyDemo\obj\Debug\net8.0\RedoclyD.C9B47901.Up2Date
 C:\Users\khatemur\source\repos\RedoclyDemo\RedoclyDemo\obj\Debug\net8.0\RedoclyDemo.dll
 C:\Users\khatemur\source\repos\RedoclyDemo\RedoclyDemo\obj\Debug\net8.0\refint\RedoclyDemo.dll

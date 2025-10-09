@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RedoclyDemo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac6f85c85ae9b0428191573e3502f4095b7a862c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7027848165173d0a04d4d09b9c87bbb267c38c86")]
 [assembly: System.Reflection.AssemblyProductAttribute("RedoclyDemo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RedoclyDemo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

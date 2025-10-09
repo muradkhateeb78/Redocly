@@ -10,4 +10,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <Target Name="RestoreDotNetTools" BeforeTargets="GenerateOpenApiSpecification">
+    <Exec Command="dotnet tool restore" />
+  </Target>
+
+  <Target Name="GenerateOpenApiSpecification" AfterTargets="Build">
+    <Exec Command="dotnet tool run swagger -- tofile --output &quot;$(ProjectDir)OpenAPI.yaml&quot; --yaml &quot;$(TargetPath)&quot; v1" />
+  </Target>
+
 </Project>
