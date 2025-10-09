@@ -1,13 +1,3 @@
 /node_modules
 .DS_Store
 .vs
-# Ignore build output folders across all projects
-**/bin/
-**/obj/
-
-# Optional: also ignore common intermediate build directories
-**/out/
-**/Debug/
-**/Release/
-
-# If using
