@@ -29,6 +29,13 @@ public class CalculatorHandler
         return product + sum;
     }
 
+    public double AddSubtractAdd(double left, double right)
+    {
+        var sum = PerformOperation(left, right, CalculatorOperation.Addition);
+        var difference = PerformOperation(left, right, CalculatorOperation.Subtraction);
+        return sum + difference;
+    }
+
     private static double HandleDivision(double left, double right)
     {
         if (right == 0)

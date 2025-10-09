@@ -37,6 +37,13 @@ public class CalculatorController : ControllerBase
         return Ok(result);
     }
 
+    [HttpGet("addSubtractAdd")]
+    public ActionResult<double> AddSubtractAdd(double left, double right)
+    {
+        var result = _handler.AddSubtractAdd(left, right);
+        return Ok(result);
+    }
+
     private ActionResult<double> Execute(double left, double right, CalculatorOperation operation)
     {
         try
