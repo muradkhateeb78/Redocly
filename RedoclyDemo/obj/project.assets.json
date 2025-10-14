@@ -453,11 +453,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\khatemur\\source\\repos\\RedoclyDemo\\RedoclyDemo\\RedoclyDemo.csproj",
+      "projectUniqueName": "D:\\Redocly\\Redocly\\RedoclyDemo\\RedoclyDemo.csproj",
       "projectName": "RedoclyDemo",
-      "projectPath": "C:\\Users\\khatemur\\source\\repos\\RedoclyDemo\\RedoclyDemo\\RedoclyDemo.csproj",
+      "projectPath": "D:\\Redocly\\Redocly\\RedoclyDemo\\RedoclyDemo.csproj",
       "packagesPath": "C:\\Users\\khatemur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\khatemur\\source\\repos\\RedoclyDemo\\RedoclyDemo\\obj\\",
+      "outputPath": "D:\\Redocly\\Redocly\\RedoclyDemo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

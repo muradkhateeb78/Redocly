@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RedoclyDemo.Handlers;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace RedoclyDemo.Controllers;
 
@@ -44,6 +46,84 @@ public class CalculatorController : ControllerBase
         return Ok(result);
     }
 
+    [HttpPost("operations")]
+    [SwaggerOperation(Summary = "Creates a new calculator operation request and returns the result.")]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public ActionResult<CalculationResponse> CreateCalculation([FromBody] CalculationRequest request)
+    {
+        try
+        {
+            var result = _handler.PerformOperation(request.Left, request.Right, request.Operation);
+            var response = new CalculationResponse(
+                request.Operation.ToString(),
+                result,
+                "Calculation created successfully.");
+
+            return Created(Request.Path, response);
+        }
+        catch (DivideByZeroException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+    [HttpPut("operations")]
+    [SwaggerOperation(Summary = "Replaces an existing calculator operation request and returns the updated result.")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public ActionResult<CalculationResponse> ReplaceCalculation([FromBody] CalculationRequest request)
+    {
+        try
+        {
+            var result = _handler.PerformOperation(request.Left, request.Right, request.Operation);
+            var response = new CalculationResponse(
+                request.Operation.ToString(),
+                result,
+                "Calculation replaced successfully.");
+
+            return Ok(response);
+        }
+        catch (DivideByZeroException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+    [HttpPatch("operations")]
+    [SwaggerOperation(Summary = "Partially updates a calculator operation request and returns the recalculated result.")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public ActionResult<CalculationResponse> UpdateCalculation([FromBody] CalculationPatchRequest request)
+    {
+        try
+        {
+            var operation = request.Operation ?? CalculatorOperation.Addition;
+            var left = request.Left ?? 0;
+            var right = request.Right ?? 0;
+            var result = _handler.PerformOperation(left, right, operation);
+            var response = new CalculationResponse(
+                operation.ToString(),
+                result,
+                "Calculation updated successfully.");
+
+            return Ok(response);
+        }
+        catch (DivideByZeroException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+    [HttpDelete("operations/{operation}")]
+    [SwaggerOperation(Summary = "Deletes a calculator operation request for the specified operation type.")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    public IActionResult DeleteCalculation(CalculatorOperation operation)
+    {
+        Response.Headers["X-Calculator-Message"] = $"Calculation for {operation} deleted successfully.";
+        return NoContent();
+    }
+
     private ActionResult<double> Execute(double left, double right, CalculatorOperation operation)
     {
         try
@@ -57,3 +137,9 @@ public class CalculatorController : ControllerBase
         }
     }
 }
+
+public record CalculationRequest(double Left, double Right, CalculatorOperation Operation);
+
+public record CalculationPatchRequest(double? Left, double? Right, CalculatorOperation? Operation);
+
+public record CalculationResponse(string Operation, double Result, string Message);

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CVRZ8EkGWW4=",
+  "dgSpecHash": "+KAp1MMDqLQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\khatemur\\source\\repos\\RedoclyDemo\\RedoclyDemo\\RedoclyDemo.csproj",
+  "projectFilePath": "D:\\Redocly\\Redocly\\RedoclyDemo\\RedoclyDemo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\khatemur\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\khatemur\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
