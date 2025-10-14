@@ -158,37 +158,137 @@ paths:
               schema:
                 type: number
                 format: double
-  /Calculator/addSubtractAdd:
-    get:
+  /Calculator/operations:
+    post:
       tags:
         - Calculator
-      parameters:
-        - name: left
-          in: query
-          schema:
-            type: number
-            format: double
-        - name: right
-          in: query
-          schema:
-            type: number
-            format: double
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CalculationRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CalculationRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CalculationRequest'
+      responses:
+        '201':
+          description: Created
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CalculationResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalculationResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CalculationResponse'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    put:
+      tags:
+        - Calculator
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CalculationRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CalculationRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CalculationRequest'
       responses:
         '200':
           description: OK
           content:
             text/plain:
               schema:
-                type: number
-                format: double
+                $ref: '#/components/schemas/CalculationResponse'
             application/json:
               schema:
-                type: number
-                format: double
+                $ref: '#/components/schemas/CalculationResponse'
             text/json:
               schema:
-                type: number
-                format: double
+                $ref: '#/components/schemas/CalculationResponse'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    patch:
+      tags:
+        - Calculator
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CalculationPatchRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CalculationPatchRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CalculationPatchRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CalculationResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalculationResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CalculationResponse'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  '/Calculator/operations/{operation}':
+    delete:
+      tags:
+        - Calculator
+      parameters:
+        - name: operation
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/CalculatorOperation'
+      responses:
+        '204':
+          description: No Content
   /WeatherForecast:
     get:
       tags:
@@ -215,6 +315,73 @@ paths:
                   $ref: '#/components/schemas/WeatherForecast'
 components:
   schemas:
+    CalculationPatchRequest:
+      type: object
+      properties:
+        left:
+          type: number
+          format: double
+          nullable: true
+        right:
+          type: number
+          format: double
+          nullable: true
+        operation:
+          $ref: '#/components/schemas/CalculatorOperation'
+      additionalProperties: false
+    CalculationRequest:
+      type: object
+      properties:
+        left:
+          type: number
+          format: double
+        right:
+          type: number
+          format: double
+        operation:
+          $ref: '#/components/schemas/CalculatorOperation'
+      additionalProperties: false
+    CalculationResponse:
+      type: object
+      properties:
+        operation:
+          type: string
+          nullable: true
+        result:
+          type: number
+          format: double
+        message:
+          type: string
+          nullable: true
+      additionalProperties: false
+    CalculatorOperation:
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+      type: integer
+      format: int32
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+      additionalProperties: { }
     WeatherForecast:
       type: object
       properties:
