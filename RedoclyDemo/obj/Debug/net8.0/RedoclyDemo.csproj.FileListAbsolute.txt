@@ -33,3 +33,15 @@ C:\Users\khatemur\source\repos\RedoclyDemo\RedoclyDemo\obj\Debug\net8.0\refint\R
 C:\Users\khatemur\source\repos\RedoclyDemo\RedoclyDemo\obj\Debug\net8.0\RedoclyDemo.pdb
 C:\Users\khatemur\source\repos\RedoclyDemo\RedoclyDemo\obj\Debug\net8.0\RedoclyDemo.genruntimeconfig.cache
 C:\Users\khatemur\source\repos\RedoclyDemo\RedoclyDemo\obj\Debug\net8.0\ref\RedoclyDemo.dll
+D:\Redocly\Redocly\RedoclyDemo\obj\Debug\net8.0\RedoclyDemo.csproj.AssemblyReference.cache
+D:\Redocly\Redocly\RedoclyDemo\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Redocly\Redocly\RedoclyDemo\obj\Debug\net8.0\RedoclyDemo.GeneratedMSBuildEditorConfig.editorconfig
+D:\Redocly\Redocly\RedoclyDemo\obj\Debug\net8.0\RedoclyDemo.AssemblyInfoInputs.cache
+D:\Redocly\Redocly\RedoclyDemo\obj\Debug\net8.0\RedoclyDemo.AssemblyInfo.cs
+D:\Redocly\Redocly\RedoclyDemo\obj\Debug\net8.0\RedoclyDemo.csproj.CoreCompileInputs.cache
+D:\Redocly\Redocly\RedoclyDemo\obj\Debug\net8.0\RedoclyDemo.MvcApplicationPartsAssemblyInfo.cs
+D:\Redocly\Redocly\RedoclyDemo\obj\Debug\net8.0\RedoclyDemo.MvcApplicationPartsAssemblyInfo.cache
+D:\Redocly\Redocly\RedoclyDemo\obj\Debug\net8.0\RedoclyDemo.sourcelink.json
+D:\Redocly\Redocly\RedoclyDemo\obj\Debug\net8.0\RedoclyDemo.dll
+D:\Redocly\Redocly\RedoclyDemo\obj\Debug\net8.0\refint\RedoclyDemo.dll
+D:\Redocly\Redocly\RedoclyDemo\obj\Debug\net8.0\RedoclyDemo.pdb

@@ -1,7 +1,5 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RedoclyDemo.Handlers;
-using Swashbuckle.AspNetCore.Annotations;
 
 namespace RedoclyDemo.Controllers;
 
@@ -46,8 +44,12 @@ public class CalculatorController : ControllerBase
         return Ok(result);
     }
 
+    /// <summary>
+    /// Creates a new calculator operation request and returns the result.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     [HttpPost("operations")]
-    [SwaggerOperation(Summary = "Creates a new calculator operation request and returns the result.")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult<CalculationResponse> CreateCalculation([FromBody] CalculationRequest request)
@@ -67,9 +69,13 @@ public class CalculatorController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+    /// <summary>
+    /// Replaces an existing calculator operation request and returns the updated result.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
 
     [HttpPut("operations")]
-    [SwaggerOperation(Summary = "Replaces an existing calculator operation request and returns the updated result.")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult<CalculationResponse> ReplaceCalculation([FromBody] CalculationRequest request)
@@ -90,8 +96,13 @@ public class CalculatorController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Partially updates a calculator operation request and returns the recalculated result.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
+
     [HttpPatch("operations")]
-    [SwaggerOperation(Summary = "Partially updates a calculator operation request and returns the recalculated result.")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult<CalculationResponse> UpdateCalculation([FromBody] CalculationPatchRequest request)
@@ -115,8 +126,13 @@ public class CalculatorController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Deletes a calculator operation request for the specified operation type.
+    /// </summary>
+    /// <param name="operation"></param>
+    /// <returns></returns>
+
     [HttpDelete("operations/{operation}")]
-    [SwaggerOperation(Summary = "Deletes a calculator operation request for the specified operation type.")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public IActionResult DeleteCalculation(CalculatorOperation operation)
     {
