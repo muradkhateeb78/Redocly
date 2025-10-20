@@ -3,99 +3,6 @@ info:
   title: RedoclyDemo API
   version: v1
 paths:
-  /Calculator/add:
-    get:
-      tags:
-        - Calculator
-      parameters:
-        - name: left
-          in: query
-          schema:
-            type: number
-            format: double
-        - name: right
-          in: query
-          schema:
-            type: number
-            format: double
-      responses:
-        '200':
-          description: OK
-          content:
-            text/plain:
-              schema:
-                type: number
-                format: double
-            application/json:
-              schema:
-                type: number
-                format: double
-            text/json:
-              schema:
-                type: number
-                format: double
-  /Calculator/subtract:
-    get:
-      tags:
-        - Calculator
-      parameters:
-        - name: left
-          in: query
-          schema:
-            type: number
-            format: double
-        - name: right
-          in: query
-          schema:
-            type: number
-            format: double
-      responses:
-        '200':
-          description: OK
-          content:
-            text/plain:
-              schema:
-                type: number
-                format: double
-            application/json:
-              schema:
-                type: number
-                format: double
-            text/json:
-              schema:
-                type: number
-                format: double
-  /Calculator/multiply:
-    get:
-      tags:
-        - Calculator
-      parameters:
-        - name: left
-          in: query
-          schema:
-            type: number
-            format: double
-        - name: right
-          in: query
-          schema:
-            type: number
-            format: double
-      responses:
-        '200':
-          description: OK
-          content:
-            text/plain:
-              schema:
-                type: number
-                format: double
-            application/json:
-              schema:
-                type: number
-                format: double
-            text/json:
-              schema:
-                type: number
-                format: double
   /Calculator/divide:
     get:
       tags:
@@ -158,10 +65,103 @@ paths:
               schema:
                 type: number
                 format: double
+  /Calculator/add:
+    get:
+      tags:
+        - GS GET Endpoints
+      parameters:
+        - name: left
+          in: query
+          schema:
+            type: number
+            format: double
+        - name: right
+          in: query
+          schema:
+            type: number
+            format: double
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: number
+                format: double
+            application/json:
+              schema:
+                type: number
+                format: double
+            text/json:
+              schema:
+                type: number
+                format: double
+  /Calculator/subtract:
+    get:
+      tags:
+        - GS GET Endpoints
+      parameters:
+        - name: left
+          in: query
+          schema:
+            type: number
+            format: double
+        - name: right
+          in: query
+          schema:
+            type: number
+            format: double
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: number
+                format: double
+            application/json:
+              schema:
+                type: number
+                format: double
+            text/json:
+              schema:
+                type: number
+                format: double
+  /Calculator/multiply:
+    get:
+      tags:
+        - GS GET Endpoints
+      parameters:
+        - name: left
+          in: query
+          schema:
+            type: number
+            format: double
+        - name: right
+          in: query
+          schema:
+            type: number
+            format: double
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: number
+                format: double
+            application/json:
+              schema:
+                type: number
+                format: double
+            text/json:
+              schema:
+                type: number
+                format: double
   /Calculator/operations:
     post:
       tags:
-        - Calculator
+        - Other GS Endpoints
       requestBody:
         content:
           application/json:
@@ -200,7 +200,7 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
     put:
       tags:
-        - Calculator
+        - Other GS Endpoints
       requestBody:
         content:
           application/json:
@@ -240,7 +240,7 @@ paths:
   '/Calculator/operations/{operation}':
     delete:
       tags:
-        - Calculator
+        - Other GS Endpoints
       parameters:
         - name: operation
           in: path

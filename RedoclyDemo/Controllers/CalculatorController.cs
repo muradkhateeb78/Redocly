@@ -13,15 +13,15 @@ public class CalculatorController : ControllerBase
     {
         _handler = handler;
     }
-
+    [Tags("GS GET Endpoints")]
     [HttpGet("add")]
     public ActionResult<double> Add(double left, double right)
         => Execute(left, right, CalculatorOperation.Addition);
-
+    [Tags("GS GET Endpoints")]
     [HttpGet("subtract")]
     public ActionResult<double> Subtract(double left, double right)
         => Execute(left, right, CalculatorOperation.Subtraction);
-
+    [Tags("GS GET Endpoints")]
     [HttpGet("multiply")]
     public ActionResult<double> Multiply(double left, double right)
         => Execute(left, right, CalculatorOperation.Multiplication);
@@ -43,6 +43,7 @@ public class CalculatorController : ControllerBase
     /// <param name="request"></param>
     /// <returns></returns>
     [HttpPost("operations")]
+    [Tags("Other GS Endpoints")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult<CalculationResponse> CreateCalculation([FromBody] CalculationRequest request)
@@ -69,6 +70,7 @@ public class CalculatorController : ControllerBase
     /// <returns></returns>
 
     [HttpPut("operations")]
+    [Tags("Other GS Endpoints")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult<CalculationResponse> ReplaceCalculation([FromBody] CalculationRequest request)
@@ -96,6 +98,7 @@ public class CalculatorController : ControllerBase
     /// <returns></returns>
 
     [HttpPatch("operations")]
+    [Tags("Other GS Endpoints")]
     [ApiExplorerSettings(IgnoreApi = true)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -127,6 +130,7 @@ public class CalculatorController : ControllerBase
     /// <returns></returns>
 
     [HttpDelete("operations/{operation}")]
+    [Tags("Other GS Endpoints")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public IActionResult DeleteCalculation(CalculatorOperation operation)
     {
