@@ -96,6 +96,7 @@ public class CalculatorController : ControllerBase
     /// <returns></returns>
 
     [HttpPatch("operations")]
+    [ApiExplorerSettings(IgnoreApi = true)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult<CalculationResponse> UpdateCalculation([FromBody] CalculationPatchRequest request)
@@ -109,7 +110,7 @@ public class CalculatorController : ControllerBase
             var response = new CalculationResponse(
                 operation.ToString(),
                 result,
-                "Calculation updated successfully.");
+                "Calculation updated successfully with a patch endpoint.");
 
             return Ok(response);
         }
